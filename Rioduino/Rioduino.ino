@@ -31,8 +31,9 @@ void updateLoop(){
   //if data written over serial, ping back sensor data
   if(Serial.available() > 0){
     Serial.read();
+    String startChar = "s";
     String l = " ";
-    String toPrint = sensor1 +l+myLidarLite.distance();
+    String toPrint = startChar + sensor1 +l+myLidarLite.distance();
     Serial.println(toPrint);
   }
 }
